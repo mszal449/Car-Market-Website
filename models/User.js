@@ -58,6 +58,6 @@ UserSchema.methods.comparePasswords = async function(candidatePassword) {
     return isMatch
 }
 
-module.exports = mongoose.Model('User', UserScheman)
+module.exports = mongoose.model('User', UserSchema)
 
 
