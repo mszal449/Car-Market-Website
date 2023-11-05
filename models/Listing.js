@@ -1,18 +1,5 @@
 const mongoose = require('mongoose')
 
-// Possible financing options for the car model
-const financingOptions = [
-  'none',
-  'bank loan',
-  'lease',
-  'auto loan',
-  'personal loan',
-  'dealer financing',
-  'credit card',
-  'cash payment',
-  'hire purchase',
-]
-
 const fuelTypes = [
   'petrol',
   'petrol+lpg',
@@ -22,7 +9,7 @@ const fuelTypes = [
 ]
 
 const ListingSchema = new mongoose.Schema({
-  type: {
+  listingType: {
     type: String,
     enum: ['private', 'company'],
     required: [true, 'Please provide listing type'],
@@ -31,19 +18,11 @@ const ListingSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  financingOptions: {
-    type: String,
-    enum: financingOptions,
-    message: 'Please provide financing options',
-  },
   createdBy: {
     type: mongoose.Types.ObjectId,
     ref: 'User',
     required: [true, 'Please provide user'],
   },
-})
-
-const CarSchema = new mongoose.Schema({
   brand: {
     type: String,
     required: [true, 'Please provide brand'],
@@ -68,9 +47,5 @@ const CarSchema = new mongoose.Schema({
   },
 })
 
-const FinalSchema = new mongoose.Schema({
-  car: CarSchema,
-  listing: ListingSchema,
-});
 
-module.exports = mongoose.model('Car', FinalSchema);
+module.exports = mongoose.model('Listing', ListingSchema);

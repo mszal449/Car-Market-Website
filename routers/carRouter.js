@@ -1,21 +1,21 @@
 const express = require('express')
 const router = express.Router()
 const {
-    getAllProducts,
-    getProduct,
-    addProduct,
-    deleteProduct,
-    updateProduct
+    getAllListings,
+    getListing,
+    addListing,
+    deleteListing,
+    updateListing,
 } = require('../controllers/car')
 
+router.route('/')
+    .get(getAllListings)
+    .post(addListing)
 
-router.route('/').get(getAllProducts)
 router.route('/:id')
-    .get(getProduct)
-    .get(addProduct)
-    .delete(deleteProduct)
-    .post(updateProduct)
-
+    .get(getListing)
+    .delete(deleteListing)
+    .patch(updateListing)
 
 module.exports = router
 
