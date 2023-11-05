@@ -12,9 +12,9 @@ const UserSchema = new mongoose.Schema({
         minlength: 3,
         maxlength: 50,
     },
-    lastnName: {
+    lastName: {
         type: String,
-        required: [true, 'Please provide surname'],
+        required: [true, 'Please provide lastname'],
         minlength: 3,
         maxlength: 50,
     },
