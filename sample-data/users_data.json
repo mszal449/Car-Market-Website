@@ -1,0 +1,59 @@
+{
+    "users": [
+    {
+        "name": "John",
+        "lastName": "Doe",
+        "password": "johndoe123",
+        "email": "john.doe@example.com"
+    },
+    {
+        "name": "Michael",
+        "lastName": "Johnson",
+        "password": "michaeljohnson789",
+        "email": "michael.johnson@example.com"
+    },    
+    {
+        "name": "Jennifer",
+        "lastName": "Williams",
+        "password": "jenniferwilliams101",
+        "email": "jennifer.williams@example.com"
+    },
+    {
+        "name": "William",
+        "lastName": "Jones",
+        "password": "williamjones2023",
+        "email": "william.jones@example.com"
+    },
+    {
+        "name": "Emily",
+        "lastName": "Brown",
+        "password": "emilybrown456",
+        "email": "emily.brown@example.com"
+    },
+    {
+        "name": "Michael",
+        "lastName": "Garcia",
+        "password": "michaelgarcia123",
+        "email": "michael.garcia@example.com"
+    },
+    {
+        "name": "Maria",
+        "lastName": "Miller",
+        "password": "mariamiller789",
+        "email": "maria.miller@example.com"
+    },
+    {
+        "name": "James",
+        "lastName": "Davis",
+        "password": "jamesdavis101",
+        "email": "james.davis@example.com"
+    },
+    {
+        "name": "Sarah",
+        "lastName": "Rodriguez",
+        "password": "sarahrodriguez2023",
+        "email": "sarah.rodriguez@example.com"
+    }
+]}
+
+  
