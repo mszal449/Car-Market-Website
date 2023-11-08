@@ -1,6 +1,6 @@
 // PRODUCT MENAGEMENT ROUTES CONTROLLER
 const Listing = require('../models/Listing')
-const { statusCodes, StatusCodes } = require('http-status-codes')
+const { StatusCodes } = require('http-status-codes')
 const { BadRequestError, NotFoundError } = require('../errors')
 
 const getAllListings = async (req, res) => {
@@ -32,6 +32,7 @@ const addListing = async (req, res) => {
 }
 
 const updateListing = async (req, res) => {
+    // get request data
     const {
         body : {
             listingType,
@@ -45,16 +46,19 @@ const updateListing = async (req, res) => {
         user: { userId },
         params: { id: listingId}
     } = req
-
-    if (!listingType|| 
-        !price || 
-        !brand ||
-        !model ||
-        !year ||
-        !generation ||
-        !mileage) {
+    
+    // check if data is complete
+    if (listingType === '' || 
+        price === '' || 
+        brand === '' ||
+        model === '' ||
+        year === '' ||
+        generation === '' ||
+        mileage === '') {
             throw new BadRequestError('No field can be empty')
-        }
+    }
+
+    // retrieve listing from database 
     const listing = await Listing.findByIdAndUpdate(
         {
             _id : listingId,
@@ -63,9 +67,13 @@ const updateListing = async (req, res) => {
         req.body,
         { new: true, runValidators: true }
     )
-    if(!listing) {
         
+    // check if target listing exists
+    if(!listing) {
+        throw new NotFoundError(`No listing fond with id ${listingId}`)
     }
+
+    res.status(StatusCodes.OK).json({ listing })
 }
 
 

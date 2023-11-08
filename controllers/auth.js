@@ -27,7 +27,6 @@ const login = async(req, res) => {
     if(!user) {
         throw new UnauthenticatedError('Wrong credentials provided')
     }
-    console.log('user found')
 
     // check if password is correct
     const isPasswordCorrect = await user.comparePasswords(password)

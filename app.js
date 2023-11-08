@@ -13,14 +13,14 @@ const authenticateUser = require('./middleware/authentication')
 
 // routers
 const authRouter = require('./routers/authRouter.js')
-const jobsRouter = require('./routers/carRouter.js')
+const listingRouter = require('./routers/listingRouter.js')
 
 app.use(express.json());
 
 
 // routes
 app.use('/api/v1/auth', authRouter)
-app.use('/api/v1/jobs', authenticateUser, jobsRouter)
+app.use('/api/v1/listing', authenticateUser, listingRouter)
 
 // middleware
 app.use(notFoundMiddleware)

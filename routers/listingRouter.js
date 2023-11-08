@@ -6,7 +6,7 @@ const {
     addListing,
     deleteListing,
     updateListing,
-} = require('../controllers/car')
+} = require('../controllers/listing')
 
 router.route('/')
     .get(getAllListings)
