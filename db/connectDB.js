@@ -1,3 +1,4 @@
+// MONGODB DATABASE CONNECTION
 const mongoose = require('mongoose')
 
 const connectDB = (url) => {

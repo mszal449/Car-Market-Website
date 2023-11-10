@@ -1,4 +1,4 @@
-// export of errors for ease of use
+// export of errors for ease import
 const CustomAPIError = require('./custom-api')
 const UnauthenticatedError = require('./unauthenticated')
 const NotFoundError = require('./not-found')

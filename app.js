@@ -13,6 +13,7 @@ const authenticateUser = require('./middleware/authentication')
 
 // routers
 const authRouter = require('./routers/authRouter.js')
+const browseRouter = require('./routers/browseRouter.js')
 const listingRouter = require('./routers/listingRouter.js')
 
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use(express.json());
 
 // routes
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/browse', browseRouter)
 app.use('/api/v1/listing', authenticateUser, listingRouter)
 
 // middleware
